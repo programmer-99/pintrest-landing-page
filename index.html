@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloomora — Curated Finds You’ll Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html,
+    body {
+      scroll-behavior: smooth;
+      background: #f8f5f2;
+      color: #2E2E2E;
+      overflow-x: hidden;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      transition: transform 0.4s;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    nav a {
+      color: #2E2E2E;
+      text-decoration: none;
+      margin-left: 30px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #FF6F61;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      max-width: 800px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      opacity: 0;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      color: #555;
+      opacity: 0;
+    }
+
+    .hero button {
+      margin-top: 30px;
+      padding: 14px 36px;
+      font-size: 17px;
+      border: none;
+      border-radius: 30px;
+      background: #FF6F61;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+    }
+
+    .hero button:hover {
+      transform: scale(1.08);
+      background: #e65c50;
+    }
+
+    /* Floating blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.35;
+      animation: floatBlob 14s infinite ease-in-out;
+    }
+
+    .blob1 {
+      width: 380px;
+      height: 380px;
+      top: -100px;
+      left: -150px;
+      background: #FF6F61;
+    }
+
+    .blob2 {
+      width: 480px;
+      height: 480px;
+      bottom: -150px;
+      right: -150px;
+      background: #FFC1B3;
+    }
+
+    .blob3 {
+      width: 300px;
+      height: 300px;
+      top: 60%;
+      left: 40%;
+      background: #FFDAD1;
+      animation-delay: 5s;
+    }
+
+    @keyframes floatBlob {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(40px, -30px) scale(1.1);
+      }
+
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+    }
+
+    /* Ambient light gradient movement */
+    .parallax-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 40% 30%, rgba(255, 111, 97, 0.15), transparent 70%);
+      mix-blend-mode: soft-light;
+      animation: lightMove 10s infinite ease-in-out alternate;
+    }
+
+    @keyframes lightMove {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(40px, -20px);
+      }
+    }
+
+    /* ---------- DECOR FLOAT ELEMENTS ---------- */
+    .decor {
+  position: absolute;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.1), inset 0 0 25px rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.2);
+  overflow: hidden;
+  transition: transform 0.8s ease, opacity 1s ease;
+  pointer-events: none;
+}
+.decor img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  transition: transform 0.8s ease;
+}
+
+.decor1 { bottom: 10%; left: 8%; animation: decorFloat 9s infinite ease-in-out; }
+.decor2 { top: 18%; right: 10%; animation: decorFloat 11s infinite ease-in-out; }
+.decor3 { bottom: 18%; right: 25%; animation: decorFloat 10s infinite ease-in-out; }
+.decor4 { top: 30%; left: 12%; animation: decorFloat 8s infinite ease-in-out; }
+
+@keyframes decorFloat {
+  0%,100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+/* Optional hover shimmer */
+.decor::after {
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
+  background:linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  transform:rotate(45deg);
+  opacity:0;
+  transition:opacity 0.6s;
+}
+.decor:hover::after {
+  opacity:1;
+  animation:shine 2s infinite linear;
+}
+@keyframes shine {
+  0% { transform:translate(-100%, -100%) rotate(45deg); }
+  100% { transform:translate(100%, 100%) rotate(45deg); }
+}
+
+    /* ---------- PARALLAX ELEMENTS ---------- */
+    .parallax-bg {
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+      top: -10%;
+      left: -10%;
+      z-index: -1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* ---------- PRODUCT GRID ---------- */
+    .store {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      padding: 120px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transform: translateY(40px);
+      opacity: 0;
+      transition: transform 0.5s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card-content {
+      padding: 24px;
+    }
+
+    .card-content h3 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .card-content p {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .card-content a {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 25px;
+      background: #FF6F61;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .card-content a:hover {
+      background: #e65c50;
+      transform: scale(1.05);
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about {
+      padding: 100px 60px;
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      opacity: 0;
+    }
+
+    .about h2 {
+      color: #FF6F61;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .about p {
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #2E2E2E;
+      color: #fff;
+      text-align: center;
+      padding: 40px 10px;
+      font-size: 14px;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width:768px) {
+      header {
+        padding: 15px 30px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .store {
+        padding: 60px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="assets/bloomora-logo.png" alt="Bloomora Logo">
+    </div>
+    <nav>
+      <a href="#store">Shop</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="parallax-bg"></div>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+
+    <!-- ✨ Floating décor elements (add matching PNGs/SVGs in assets folder) -->
+    <!-- ✨ Glassmorphic décor circles -->
+    <div class="decor decor1 glass"><img src="assets/lamp.png" alt="Vase decor"></div>
+    <div class="decor decor2 glass"><img src="assets/bundle.png" alt="Lamp decor"></div>
+    <div class="decor decor3 glass"><img src="assets/sofa.png" alt="Leaf decor"></div>
+    <div class="decor decor4 glass"><img src="assets/sofa.png" alt="Candle decor"></div>
+
+
+    <h1>Discover Beautiful Things Worth Having ✨</h1>
+    <p>Your curated collection of lifestyle & home finds — picked with love and designed to make your space bloom.</p>
+    <button onclick="document.getElementById('store').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+  </section>
+
+  <section id="store" class="store">
+    <div class="card">
+      <img src="assets/sofa.png" alt="Product 1">
+      <div class="card-content">
+        <h3>Nordic Ceramic Vase</h3>
+        <p>Minimalist design with a soft matte finish — elevate your home décor.</p>
+        <a href="#">Buy Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/lamp.png" alt="Product 2">
+      <div class="card-content">
+        <h3>Wooden Lamp</h3>
+        <p>Warm and cozy lighting for your bedroom or living area.</p>
+        <a href="#">Buy Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/bundle.png" alt="Product 3">
+      <div class="card-content">
+        <h3>Self-Care Bundle</h3>
+        <p>Essential oils, candles, and masks — your perfect relaxation kit.</p>
+        <a href="#">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Bloomora</h2>
+    <p>Bloomora is your cozy corner where aesthetics meet purpose. Every item is hand-picked to bring warmth, calm, and
+      inspiration to your home. From décor to wellness, we curate only the best so you can live beautifully, every day.
+      🌷</p>
+  </section>
+
+  <footer>
+    © 2025 Bloomora — Curated Finds You’ll Love ❤️
+  </footer>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero text animations
+    gsap.to(".hero h1", { opacity: 1, y: 0, duration: 1, delay: 0.4, ease: "power3.out" });
+    gsap.to(".hero p", { opacity: 1, y: 0, duration: 1, delay: 0.8, ease: "power3.out" });
+    gsap.to(".hero button", { opacity: 1, y: 0, duration: 1, delay: 1.2, ease: "power3.out" });
+
+    // Floating decor fade-in and parallax
+    gsap.utils.toArray(".decor").forEach((el, i) => {
+      gsap.to(el, {
+        opacity: 1, y: 0, duration: 1.2, delay: 0.4 * i + 0.8, ease: "power3.out",
+        scrollTrigger: { trigger: ".hero", start: "top center" }
+      });
+    });
+
+    // Mouse parallax movement for decor
+    document.addEventListener("mousemove", e => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 40;
+      const y = (e.clientY / window.innerHeight - 0.5) * 40;
+      gsap.to(".decor1", { x: -x / 2, y: -y / 2, duration: 1.2 });
+      gsap.to(".decor2", { x: x / 3, y: y / 3, duration: 1.2 });
+      gsap.to(".decor3", { x: -x / 4, y: y / 4, duration: 1.2 });
+      gsap.to(".decor4", { x: x / 2, y: -y / 3, duration: 1.2 });
+    });
+
+    // Parallax background movement
+    document.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 40;
+      const y = (e.clientY / window.innerHeight - 0.5) * 40;
+      gsap.to(".parallax-bg", { x: -x, y: -y, duration: 1.5, ease: "power2.out" });
+    });
+
+    // Animate cards on scroll
+    gsap.utils.toArray(".card").forEach((card, i) => {
+      gsap.to(card, {
+        scrollTrigger: { trigger: card, start: "top 90%", toggleActions: "play none none none" },
+        y: 0, opacity: 1, duration: 1, delay: i * 0.1, ease: "power3.out"
+      });
+    });
+
+    // About section fade-in
+    gsap.to(".about", {
+      scrollTrigger: { trigger: ".about", start: "top 80%" },
+      opacity: 1, duration: 1.5, ease: "power3.out"
+    });
+  </script>
+</body>
+
+</html>
