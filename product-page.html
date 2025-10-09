@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product - Hanging Ball Glass | Bloomora Store</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="sb-collapsed">
+  
+  <!-- Sidebar (same as home) -->
+    <aside id="sidebar" class="sidebar" aria-label="Category sidebar">
+   <button id="sbToggle" class="sb-toggle" aria-label="Toggle sidebar" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+        <span class="label">All Categories</span>
+    </button>
+
+    <ul class="sb-menu">
+      <li>
+        <a href="#" data-title="Laptops, Tablets & PCs">
+          <i class="fa-solid fa-laptop"></i>
+          <span class="label">Laptops, Tablets & PCs</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" data-title="Computer & Office">
+          <i class="fa-solid fa-desktop"></i>
+          <span class="label">Computer & Office</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" data-title="Hardware & Components">
+          <i class="fa-solid fa-microchip"></i>
+          <span class="label">Hardware & Components</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" data-title="Smartphones">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <span class="label">Smartphones</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" data-title="Games & Entertainment">
+          <i class="fa-solid fa-gamepad"></i>
+          <span class="label">Games & Entertainment</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" data-title="Photo & Video">
+          <i class="fa-solid fa-camera"></i>
+          <span class="label">Photo & Video</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" data-title="Home Appliance">
+          <i class="fa-solid fa-blender"></i>
+          <span class="label">Home Appliance</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Page wrapper -->
+  <div class="page">
+    
+    <!-- Header (same as home) -->
+    <header class="header">
+      <div class="left d-flex align-items-center gap-2">
+        <img src="assets/logo.png" class="logo" alt="Bloomora"/>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Search for products"/>
+      </div>
+      <div class="right d-flex align-items-center gap-4">
+        <span><i class="fa-solid fa-headset me-2"></i> +1 212-334-0212</span>
+        <span><i class="fa-solid fa-cart-shopping me-2"></i> Cart(0)</span>
+      </div>
+    </header>
+
+    <!-- ✅ Product Section -->
+    <section class="single-product container py-5">
+      <div class="row g-5 align-items-start">
+
+        <!-- Thumbnails -->
+        <div class="col-md-2 d-flex flex-column gap-3 product-thumbs">
+          <img src="img/glass1.jpg" alt="Thumb 1" class="thumb">
+          <img src="img/glass2.jpg" alt="Thumb 2" class="thumb">
+          <img src="img/glass3.jpg" alt="Thumb 3" class="thumb">
+        </div>
+
+        <!-- Main image -->
+        <div class="col-md-5 product-gallery">
+          <img src="img/glass-main.jpg" alt="Hanging Ball Glass" class="img-fluid main-img">
+        </div>
+
+        <!-- Details -->
+        <div class="col-md-5 product-details">
+          <h1 class="product-title">Hanging Ball Glass</h1>
+          <p class="price">$235.00</p>
+          <p class="desc">
+            A ac scelerisque adipiscing a vel augue vestibulum facilisi id aptent justo sociis neque a inceptos curae.
+            A dis convallis natoque a sem ad adipiscing at per ullamcorper urna quam eleifend feugiat ut nostra nibh sem aliquam odio.
+          </p>
+
+          <div class="cart-controls d-flex gap-2 my-3">
+            <input type="number" value="1" min="1" class="qty form-control w-25">
+            <button class="btn-gradient">Add to Cart</button>
+          </div>
+
+          <p><strong>Category:</strong> Decor</p>
+          <p><strong>Share:</strong>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Tabs Section -->
+    <section class="product-tabs container py-5">
+    <!-- Tabs Navigation -->
+    <ul class="nav nav-tabs" id="productTab" role="tablist">
+        <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc" type="button" role="tab">
+            Description
+        </button>
+        </li>
+        <li class="nav-item" role="presentation">
+        <button class="nav-link" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab">
+            Additional Information
+        </button>
+        </li>
+        <li class="nav-item" role="presentation">
+        <button class="nav-link" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button" role="tab">
+            Shipping & Delivery
+        </button>
+        </li>
+    </ul>
+
+    <!-- Tabs Content -->
+    <div class="tab-content mt-4" id="productTabContent">
+        <!-- Description -->
+        <div class="tab-pane fade show active" id="desc" role="tabpanel">
+        <h3>Product Description</h3>
+        <p>
+            This handcrafted item is made with high-quality materials, designed to enhance your space with elegance.
+            Every piece is curated with attention to detail to ensure durability and timeless appeal.
+        </p>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="tab-pane fade" id="info" role="tabpanel">
+        <h3>Additional Information</h3>
+        <ul>
+            <li><strong>Material:</strong> 65% Polyester, 23% Elastane</li>
+            <li><strong>Dimensions:</strong> 42cm × 28cm × 16cm</li>
+            <li><strong>Brand:</strong> Bloomora</li>
+        </ul>
+        </div>
+
+        <!-- Shipping & Delivery -->
+        <div class="tab-pane fade" id="shipping" role="tabpanel">
+        <h3>Shipping & Delivery</h3>
+        <p>
+            We offer worldwide shipping 🌍. Delivery times range from 5–12 business days depending on your region.  
+            Free shipping on orders over $100. All items are packed with care and tracking will be provided.  
+        </p>
+        </div>
+    </div>
+    </section>
+
+    <!-- RELATED PRODUCTS -->
+    <section class="related-products">
+    <div class="container">
+        <div class="section-header">
+        <h2>Related products</h2>
+        <p>Browse items customers often view with this product</p>
+        </div>
+
+        <div class="swiper rp-swiper">
+        <div class="swiper-wrapper">
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+            <div class="product-card">
+                <div class="badge new">NEW</div>
+                <div class="product-img">
+                <img src="img/ssd.jpg" alt="Geometric Candlestick">
+                </div>
+                <h4>3D Geometric Candlestick</h4>
+                <p class="category">Decor</p>
+                <div class="rating">★★★★★</div>
+                <p class="price">$232.00</p>
+                <a href="https://amazon.com" target="_blank" class="btn btn-buy">Go to Amazon</a>
+            </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+            <div class="product-card">
+                <div class="badge hot">HOT</div>
+                <div class="product-img">
+                <img src="img/usb.jpg" alt="Candlestick Metal">
+                </div>
+                <h4>Candlestick Metal</h4>
+                <p class="category">Decor</p>
+                <div class="rating">★★★★☆</div>
+                <p class="price">$248.00</p>
+                <a href="https://amazon.com" target="_blank" class="btn btn-buy">Go to Amazon</a>
+            </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+            <div class="product-card">
+                <div class="product-img">
+                <img src="img/ipad.jpg" alt="Ceramic Vase Flower">
+                </div>
+                <h4>Ceramic Vase Flower</h4>
+                <p class="category">Decor</p>
+                <div class="rating">★★★★★</div>
+                <p class="price">$288.00</p>
+                <a href="https://amazon.com" target="_blank" class="btn btn-buy">Go to Amazon</a>
+            </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+            <div class="product-card">
+                <div class="product-img">
+                <img src="img/ryzen.jpg" alt="Decal Home Living">
+                </div>
+                <h4>Decal Home Living</h4>
+                <p class="category">Decor</p>
+                <div class="rating">★★★★★</div>
+                <p class="price">$262.00</p>
+                <a href="https://amazon.com" target="_blank" class="btn btn-buy">Go to Amazon</a>
+            </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide">
+            <div class="product-card">
+                <div class="badge new">NEW</div>
+                <div class="product-img">
+                <img src="img/macbook.jpg" alt="Marble Soap Set">
+                </div>
+                <h4>Marble Soap Set</h4>
+                <p class="category">Bathroom</p>
+                <div class="rating">★★★★☆</div>
+                <p class="price">$199.00</p>
+                <a href="https://amazon.com" target="_blank" class="btn btn-buy">Go to Amazon</a>
+            </div>
+            </div>
+
+        </div>
+
+        <!-- Arrows -->
+        <div class="rp-prev"><i class="fa-solid fa-chevron-left"></i></div>
+        <div class="rp-next"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination rp-pagination"></div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Footer (reuse same footer from homepage if needed) -->
+
+  </div>
+<!-- Bootstrap JS (enables data-bs-toggle="tab") -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Your scripts -->
+<script src="script.js"></script>
+</body>
+</html>
