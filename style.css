@@ -982,3 +982,32 @@ body.sb-expanded .page { margin-left: var(--sb-expanded); }
   .rp-prev, .rp-next { display: none; }
   .rp-swiper { padding: 0 0 40px; }   /* remove side padding when arrows hidden */
 }
+#searchResults {
+  position: absolute;
+  background: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-height: 280px;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 9999;
+  display: none;
+}
+
+#searchResults li {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+
+#searchResults li:hover {
+  background: #f8f8f8;
+}
+
+.search {
+  position: relative;
+}

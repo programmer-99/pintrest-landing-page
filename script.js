@@ -57,3 +57,63 @@ const relatedSwiper = new Swiper('.rp-swiper', {
     1200:{ slidesPerView: 4,   spaceBetween: 24 }
   }
 });
+window.addEventListener("load", () => {
+  const searchInput = document.getElementById("searchInput");
+  const searchResults = document.getElementById("searchResults");
+  const allProducts = document.querySelectorAll(".product-card");
+
+  // Collect product info
+  const productList = Array.from(allProducts).map(card => ({
+    title: card.querySelector("h4")?.textContent.trim() || "",
+    category: card.querySelector(".category")?.textContent.trim() || "",
+  }));
+
+  // Show matching results as user types
+  searchInput.addEventListener("input", e => {
+    const query = e.target.value.toLowerCase().trim();
+    searchResults.innerHTML = "";
+
+    if (!query) {
+      searchResults.style.display = "none";
+      return;
+    }
+
+    const matches = productList.filter(
+      p => p.title.toLowerCase().includes(query) || p.category.toLowerCase().includes(query)
+    );
+
+    if (matches.length === 0) {
+      searchResults.style.display = "none";
+      return;
+    }
+
+    matches.slice(0, 10).forEach(match => {
+      const li = document.createElement("li");
+      li.textContent = `${match.title} (${match.category})`;
+      li.addEventListener("click", () => {
+        searchInput.value = "";
+        searchResults.style.display = "none";
+
+        // Scroll to first matching product in grid
+        allProducts.forEach(card => {
+          const title = card.querySelector("h4")?.textContent.trim().toLowerCase();
+          if (title.includes(match.title.toLowerCase())) {
+            card.scrollIntoView({ behavior: "smooth", block: "center" });
+            card.style.outline = "2px solid #ff6f61";
+            setTimeout(() => (card.style.outline = "none"), 2000);
+          }
+        });
+      });
+      searchResults.appendChild(li);
+    });
+
+    searchResults.style.display = "block";
+  });
+
+  // Hide list when clicking elsewhere
+  document.addEventListener("click", e => {
+    if (!e.target.closest(".search")) {
+      searchResults.style.display = "none";
+    }
+  });
+});
