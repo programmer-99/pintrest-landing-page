@@ -453,8 +453,8 @@ body.sb-expanded .page { margin-left: var(--sb-expanded); }
 
 /* Image size fixed */
 .category-card img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: auto;
   object-fit: contain;
   margin-bottom: 15px;
 }
