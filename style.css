@@ -318,9 +318,19 @@ body.sb-expanded .page { margin-left: var(--sb-expanded); }
   max-height: 100%;
   object-fit: contain;
 }
-
-/* Info */
-.product-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 5px; }
+.product-card h4 {
+  font-size: 1rem; 
+  font-weight: 600;
+  margin: 10px 0 6px;
+  color: #222;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;     /* ✅ limits to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 2.8em;              /* keeps consistent height */
+  line-height: 1.4em;
+}
 .category { font-size: 0.85rem; color: #888; margin-bottom: 5px; }
 .rating { color: #ffc107; font-size: 0.9rem; margin-bottom: 5px; }
 .price { color: var(--secondary); font-weight: 700; font-size: 1rem; margin-bottom: 10px; }
