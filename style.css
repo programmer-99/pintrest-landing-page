@@ -1011,3 +1011,40 @@ body.sb-expanded .page { margin-left: var(--sb-expanded); }
 .search {
   position: relative;
 }
+.policy-section {
+  background: #fff;
+  color: #333;
+  line-height: 1.8;
+}
+
+.policy-section .breadcrumb-nav {
+  font-size: 14px;
+  color: #555;
+}
+
+.breadcrumb-link {
+  color: #ff8a7a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-current {
+  color: #777;
+}
+
+.policy-content h3 {
+  font-weight: 600;
+  margin-top: 30px;
+  font-size: 22px;
+  color: #222;
+}
+
+.policy-content p,
+.policy-content li {
+  color: #555;
+  margin-bottom: 12px;
+}
