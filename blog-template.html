@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="meta-title">Bloomora Blog</title>
+  <meta name="description" id="meta-description" content="">
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.webp">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap (optional for grid/utilities) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="sb-collapsed">
+      <!-- ===== Sidebar ===== -->
+  <aside id="sidebar" class="sidebar" aria-label="Category sidebar">
+    <button id="sbToggle" class="sb-toggle" aria-label="Toggle sidebar" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+      <span class="label">All Categories</span>
+    </button>
+
+    <ul class="sb-menu">
+      <li><a href="#"><i class="fa-regular fa-lightbulb"></i><span class="label">Lighting & Lamps</span></a></li>
+      <li><a href="#"><i class="fa-solid fa-image"></i><span class="label">Wall Art & Mirrors</span></a></li>
+      <li><a href="#"><i class="fa-solid fa-bed"></i><span class="label">Bedroom Essentials</span></a></li>
+      <li><a href="#"><i class="fa-solid fa-couch"></i><span class="label">Living Room Accents</span></a></li>
+      <li><a href="#"><i class="fa-solid fa-boxes-stacked"></i><span class="label">Storage</span></a></li>
+      <li><a href="#"><i class="fa-solid fa-house"></i><span class="label">Home Fragrance</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- ===== Page Wrapper ===== -->
+  <div class="page">
+
+    <!-- ===== Header ===== -->
+    <header class="header">
+      <div class="left d-flex align-items-center gap-2">
+        <a href="index.html"><img src="assets/logo.png" class="logo" alt="Bloomora" /></a>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Search for products" id="searchInput" />
+        <ul id="searchResults"></ul>
+      </div>
+      <div class="right d-flex align-items-center gap-4">
+        <span><i class="fa-brands fa-pinterest"></i>&nbsp;
+          <a href="https://www.pinterest.com/wearebloomora/" style="color:black;text-decoration:none;">We Are Bloomora</a>
+        </span>
+      </div>
+    </header>
+
+    <!-- ===== Blog Area (dynamic) ===== -->
+    <section class="blog-single">
+      <div class="container">
+        <article id="blog-content"></article>
+      </div>
+    </section>
+
+    <!-- ===== related content ===== -->
+    <section class="latest-blogs related-blogs">
+      <div class="container">
+        <h2>Related <span class="keyword-highlight">Blog Posts</span></h2>
+
+        <div class="blog-grid">
+          <!-- cards unchanged -->
+          <article class="blog-card">
+            <img src="assets/blog-2.webp" alt="Reading Nook" />
+            <div class="blog-content">
+              <h4>Cozy Corners – Create a Reading Nook You’ll Never Want to Leave</h4>
+              <p>Turn your corner into a cozy retreat with layered textures and ambient lighting.</p>
+              <a href="blog-template.html?id=reading-nook" class="read-more">Read More →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="assets/blog-3.webp" alt="Minimalist Bedroom" />
+            <div class="blog-content">
+              <h4>Minimalist Bedroom Makeover – Less Clutter, More Calm</h4>
+              <p>Refresh your bedroom with soothing tones and a minimalist mindset.</p>
+              <a href="blog-template.html?id=minimalist-bedroom" class="read-more">Read More →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="assets/blog-4.webp" alt="Living Room Decor" />
+            <div class="blog-content">
+              <h4>7 Amazon Finds for a Pinterest-Worthy Living Room</h4>
+              <p>Shop smart and decorate like a pro with these elegant living room pieces.</p>
+              <a href="blog-template.html?id=living-room-decor" class="read-more">Read More →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3 class="footer-logo"><img src="assets/logo.png" width="140px" alt="Company Logo" /></h3>
+          <p>Curated home décor collections. Inspired by Pinterest. Powered by Amazon.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our solutions</h4>
+          <ul>
+            <li><a href="#">Lights</a></li>
+            <li><a href="#">Frames</a></li>
+            <li><a href="#">Bedroom</a></li>
+            <li><a href="#">Living Room</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+            <li><a href="index.html#blogs">Blogs</a></li>
+            <li><a href="https://www.instagram.com/we_are_bloomora/">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact us</h4>
+          <div class="social-icons">
+            <a href="https://www.pinterest.com/wearebloomora/"><i class="fab fa-pinterest"></i></a>
+            <a href="https://www.instagram.com/we_are_bloomora/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.amazon.com/"><i class="fab fa-amazon"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright ©2025 All rights reserved | Bloomora</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="blog.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

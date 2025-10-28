@@ -99,7 +99,14 @@
       <div class="overlay">
         <div class="hero-content text-center">
           <h1>Discover Beautiful Things Worth Having</h1>
-          <p>Your curated collection of modern and affordable <span class="content-highlight">home décor</span> items from stylish lamps to cozy accents, hand-picked Amazon finds to elevate your space.</p>
+          <p>
+            Welcome to <span class="content-highlight">Bloomora</span> — your curated destination for
+            <span class="content-highlight">modern, affordable home décor</span> that brings warmth and personality into every corner of your home. 
+            From elegant <span class="content-highlight">wall art</span> and chic <span class="content-highlight">lamps</span> 
+            to cozy <span class="content-highlight">textiles</span> and minimalist <span class="content-highlight">furniture accents</span>, 
+            we handpick the best <span class="content-highlight">Amazon finds</span> to inspire your next room refresh. 
+            Explore beautiful, trend-driven pieces designed to make your home feel truly yours.
+        </p>
           <a href="https://amzn.to/4nht3Nm" target="_blank"><button class="btn-gradient">Shop Home Décor on Amazon</button></a>
 
           <!-- floating circles -->
@@ -475,8 +482,18 @@
     <div class="container">
         <div class="section-header">
             <h2>Why Shop Our <span class="keyword-highlight">Curated Amazon Home Décor?</span></h2>
-            <p>At Bloomora, we make it easy to shop <span>home décor on Amazon</span>. 
-            We handpick <span class="content-highlight">stylish home décor finds</span> and create <span class="content-highlight">Pinterest-inspired collections</span> that bring creativity to your home styling.</p>
+            <p>
+            At <strong>Bloomora</strong>, we’re passionate about turning everyday spaces into inspiring sanctuaries.
+            We simplify your journey to a beautifully designed home by curating 
+            <span class="content-highlight">Amazon’s best home décor finds</span> 
+            into one aesthetic destination. Every collection is 
+            <span class="content-highlight">Pinterest-inspired</span>, thoughtfully arranged, 
+            and focused on <span class="content-highlight">style, comfort, and value</span>. 
+            Whether you love <span class="content-highlight">minimalist design</span>, 
+            <span class="content-highlight">boho accents</span>, or 
+            <span class="content-highlight">modern luxury décor</span>,
+            our selections help you create a home that truly reflects your personality.
+        </p>
         </div>
 
         <div class="features-grid">
@@ -484,21 +501,43 @@
         <div class="feature-card">
             <img src="assets/services1.webp" alt="Feature 1">
             <h4>Modern & Stylish Designs</h4>
-            <p>Each product is hand-picked to match today’s interior trends, making your home look fresh, cozy, and inviting.</p>
+            <p>
+            We explore the latest <span class="content-highlight">interior design trends</span> — 
+            from clean <span class="content-highlight">Scandinavian style</span> to soft 
+            <span class="content-highlight">earthy tones</span> — 
+            so you don’t have to spend hours searching. Each product we feature is chosen for its 
+            <strong>design quality, durability, and aesthetic appeal</strong>.
+            With Bloomora, it’s easy to keep your home <span class="content-highlight">fresh, cozy, and on-trend</span> all year round.
+            </p>
         </div>
 
         <!-- Card 2 -->
         <div class="feature-card">
             <img src="assets/services2.webp" alt="Feature 2">
             <h4>Pinterest-Inspired Collections</h4>
-            <p>Our décor picks are styled with creativity in mind, helping you find aesthetic inspiration for every corner of your home.</p>
+            <p>
+            Every room tells a story, and our collections help you write yours.
+            We group items that complement each other in 
+            <span class="content-highlight">color, texture, and mood</span> — so you can
+            <strong>shop cohesive room looks instantly</strong>. 
+            From <span class="content-highlight">chic gallery walls</span> to 
+            <span class="content-highlight">warm reading corners</span>,
+            each curation makes <span class="content-highlight">interior styling effortless</span> and enjoyable.
+            </p>
         </div>
 
         <!-- Card 3 -->
         <div class="feature-card">
             <img src="assets/services3.webp" alt="Feature 3">
             <h4>Easy Shopping Experience</h4>
-            <p>No endless scrolling — simply click and shop directly from Amazon’s trusted platform.</p>
+             <p>
+            Forget the hassle of browsing hundreds of listings — Bloomora connects you directly
+            to <span class="content-highlight">verified Amazon décor products</span> you’ll love. 
+            One click takes you straight to <span class="content-highlight">trusted sellers</span> 
+            with reliable shipping, authentic reviews, and secure checkout.
+            We make home styling as simple as 
+            <span class="content-highlight">scroll, click, and decorate</span>.
+            </p>
         </div>
         </div>
     </div>
@@ -954,6 +993,35 @@
         </div>
     </section>
 
+    <!-- Section: Blogs -->
+    <section class="latest-blogs" id="blogs">
+    <div class="container">
+        <h2>From <span class="keyword-highlight">Our Blog</span></h2>
+        <div id="latest-blogs" class="blog-grid"></div>
+    </div>
+    </section>
+
+    <script src="blog.js"></script>
+    <script>
+    const blogContainer = document.getElementById("latest-blogs");
+    const blogEntries = Object.entries(blogs).slice(0, 6); // Show first 6
+
+    blogEntries.forEach(([key, post]) => {
+        const shortDesc = post.description.split(" ").slice(0, 20).join(" ") + "...";
+        blogContainer.innerHTML += `
+        <article class="blog-card">
+            <img src="${post.image}" alt="${post.title}">
+            <div class="blog-content">
+            <h4>${post.title}</h4>
+            <span class="blog-date">${post.date}</span>
+            <p>${shortDesc}</p>
+            <a href="blog-template.html?id=${key}" class="read-more">Read More →</a>
+            </div>
+        </article>
+        `;
+    });
+    </script>
+
     <!-- Testimonails -->
     <section class="testimonials">
     <div class="section-header">
@@ -1123,7 +1191,7 @@
         <ul>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-            <li><a href="#">Blogs</a></li>
+            <li><a href="index.html#blogs">Blogs</a></li>
             <li><a href="https://www.instagram.com/we_are_bloomora/">Contact Us</a></li>
         </ul>
         </div>
